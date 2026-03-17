@@ -20,6 +20,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Reel.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Reel.h" />
+    <ClInclude Include="src\Symbol.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
