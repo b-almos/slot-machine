@@ -21,9 +21,12 @@
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Reel.cpp" />
+    <ClCompile Include="src\ReelSet.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Constants.h" />
     <ClInclude Include="src\Reel.h" />
+    <ClInclude Include="src\ReelSet.h" />
     <ClInclude Include="src\Symbol.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

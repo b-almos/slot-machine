@@ -1,15 +1,17 @@
 #pragma once
 
 #include "Symbol.h"
-#include <vector>
+#include "Constants.h"
+#include <array>
 
 namespace slot {
 	class Reel {
 	private:
-		std::vector<Symbol> strip;
+		std::array<Symbol, strip_size> strip;
 	public:
-		Reel(std::vector<Symbol>);
-		std::vector<Symbol> getShowingSymbols(const int stop_position);
-		Symbol getSymbolAt(const int stop_position, const int offset);
+		Reel();
+		Reel(std::array<Symbol, strip_size>);
+		const std::array<Symbol, rows_count> getShowingSymbols(const int stop_position);
+		const Symbol getSymbolAt(const int stop_position, const int offset);
 	};
 }

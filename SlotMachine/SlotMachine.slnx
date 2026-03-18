@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="SlotMachine/SlotMachine.vcxproj" />
+  <Project Path="SlotMachine/SlotMachine.vcxproj" Id="3a048fd1-b23b-450d-987c-f487454c3f38" />
 </Solution>
