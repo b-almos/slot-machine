@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Symbol.h"
+#include "Types.h"
 #include "Constants.h"
 #include <array>
 
@@ -11,7 +11,7 @@ namespace slot {
 	public:
 		Reel();
 		Reel(std::array<Symbol, strip_size>);
-		const std::array<Symbol, rows_count> getShowingSymbols(const int stop_position);
-		const Symbol getSymbolAt(const int stop_position, const int offset);
+		const std::array<Symbol, rows_count> getShowingSymbols(const int stop_position) const;
+		const Symbol getSymbolAt(const int stop_position, const int offset) const;
 	};
 }

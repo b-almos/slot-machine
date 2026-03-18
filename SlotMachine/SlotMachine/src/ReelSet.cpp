@@ -2,7 +2,7 @@
 
 namespace slot {
 	ReelSet::ReelSet()
-		: reels{ Reel(strip_1), Reel(strip_2), Reel(strip_3), Reel(strip_4), Reel(strip_5) }, grid { }
+		: reels{ Reel(strip_1), Reel(strip_2), Reel(strip_3), Reel(strip_4), Reel(strip_5) }, grid{ }
 	{
 	}
 
@@ -16,7 +16,7 @@ namespace slot {
 		}
 	}
 
-	const void ReelSet::print()
+	void ReelSet::print() const
 	{
 		for (int i = 0; i < rows_count; ++i) {
 			for (int j = 0; j < reels_count; ++j) {
@@ -24,5 +24,10 @@ namespace slot {
 			}
 			std::cout << '\n';
 		}
+	}
+
+	const std::array<std::array<Symbol, reels_count>, rows_count>& ReelSet::getGrid() const
+	{
+		return grid;
 	}
 }

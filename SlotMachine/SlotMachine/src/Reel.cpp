@@ -6,7 +6,7 @@ namespace slot {
 	Reel::Reel(std::array<Symbol, strip_size> reel_strip)
 		: strip{ reel_strip } { }
 
-	const std::array<Symbol, rows_count> Reel::getShowingSymbols(const int stop_position)
+	const std::array<Symbol, rows_count> Reel::getShowingSymbols(const int stop_position) const
 	{
 		std::array<Symbol, rows_count> showing_symbols;
 
@@ -24,7 +24,7 @@ namespace slot {
 	}
 
 	// for the graphical phase
-	const Symbol Reel::getSymbolAt(const int stop_position, const int offset)
+	const Symbol Reel::getSymbolAt(const int stop_position, const int offset) const
 	{
 		int symbol_pos = stop_position + offset;
 		while (symbol_pos < 0) {

@@ -70,6 +70,7 @@ namespace slot {
 	public:
 		ReelSet();
 		void spin(const std::array<int, reels_count>&);
-		const void print();
+		void print() const;
+		const std::array<std::array<Symbol, reels_count>, rows_count>& getGrid() const;
 	};
 }

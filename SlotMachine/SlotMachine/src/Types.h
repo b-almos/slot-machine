@@ -11,4 +11,9 @@ namespace slot {
 		Bell,
 		Seven
 	};
+
+	struct PaylineResult {
+		Symbol symbol;
+		int match_count;
+	};
 }
