@@ -8,5 +8,5 @@ namespace slot {
 	constexpr int symbol_count = 8;
 	constexpr int bet_levels_count = 19;
 	constexpr int default_balance = 15000;
-	constexpr int starting_bet_level_position = 5;
+	constexpr int starting_bet_level_position = 4;
 }

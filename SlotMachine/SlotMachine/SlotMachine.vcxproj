@@ -25,6 +25,7 @@
     <ClCompile Include="src\Paytable.cpp" />
     <ClCompile Include="src\Reel.cpp" />
     <ClCompile Include="src\ReelSet.cpp" />
+    <ClCompile Include="src\SlotMachine.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Constants.h" />
@@ -33,6 +34,7 @@
     <ClInclude Include="src\Paytable.h" />
     <ClInclude Include="src\Reel.h" />
     <ClInclude Include="src\ReelSet.h" />
+    <ClInclude Include="src\SlotMachine.h" />
     <ClInclude Include="src\Types.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
