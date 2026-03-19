@@ -13,4 +13,9 @@ int main()
 	slot::Paylines paylines;
 
 	std::array<slot::PaylineResult, slot::payline_count> payline_results = paylines.evaluatePaylines(game_grid.getGrid());
+
+	std::cout << "\n\n\n";
+	for (int i = 0; i < payline_results.size(); ++i) {
+		std::cout << static_cast<int>(payline_results[i].symbol) << ' ' << payline_results[i].match_count << "\n";
+	}
 }

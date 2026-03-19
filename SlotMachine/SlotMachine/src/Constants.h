@@ -5,4 +5,5 @@ namespace slot {
 	constexpr int reels_count = 5;
 	constexpr int strip_size = 32;
 	constexpr int payline_count = 5;
+	constexpr int symbol_count = 8;
 }

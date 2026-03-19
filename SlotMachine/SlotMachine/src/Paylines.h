@@ -10,11 +10,11 @@ namespace slot {
 		static constexpr std::array<std::array<int, reels_count>, payline_count> paylines
 		{	
 			{
-			{{0, 0, 0, 0, 0}},
-			{{1, 1, 1, 1, 1}},
-			{{2, 2, 2, 2, 2}},
-			{{2, 1, 0, 1, 2}},
-			{{0, 1, 2, 1, 0}}
+				{{0, 0, 0, 0, 0}},
+				{{1, 1, 1, 1, 1}},
+				{{2, 2, 2, 2, 2}},
+				{{2, 1, 0, 1, 2}},
+				{{0, 1, 2, 1, 0}}
 			}
 		};
 
@@ -26,6 +26,6 @@ namespace slot {
 		static constexpr std::array<int, payline_count> line_5{ 0, 1, 2, 1, 0 };	// v line
 		*/
 	public:
-		const std::array<PaylineResult, payline_count> evaluatePaylines(const std::array<std::array<Symbol, reels_count>, rows_count>&);
+		std::array<PaylineResult, payline_count> evaluatePaylines(const std::array<std::array<Symbol, reels_count>, rows_count>&) const;
 	};
 }
