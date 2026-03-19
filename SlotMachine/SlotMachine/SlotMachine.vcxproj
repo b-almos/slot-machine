@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\CreditSystem.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Paylines.cpp" />
     <ClCompile Include="src\Paytable.cpp" />
@@ -27,6 +28,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Constants.h" />
+    <ClInclude Include="src\CreditSystem.h" />
     <ClInclude Include="src\Paylines.h" />
     <ClInclude Include="src\Paytable.h" />
     <ClInclude Include="src\Reel.h" />

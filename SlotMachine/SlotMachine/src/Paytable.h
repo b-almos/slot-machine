@@ -22,8 +22,8 @@ namespace slot {
 		};
 
 	public:
-		std::array<int, payline_count> evaluatePaytable(const std::array<PaylineResult, payline_count>&) const;
+		std::array<int, payline_count> evaluatePaytable(const std::array<PaylineResult, payline_count>&) const;		// returns the multipliers for each payline based on the paytable
 
-		static int totalWin(const std::array<int, payline_count>&);
+		static int totalMultiplier(const std::array<int, payline_count>&);
 	};
 }

@@ -12,7 +12,7 @@ namespace slot {
 		return paytable_results;
 	}
 
-	int Paytable::totalWin(const std::array<int, payline_count>& paytable_results)
+	int Paytable::totalMultiplier(const std::array<int, payline_count>& paytable_results)
 	{
 		int sum = 0;
 		for (int i = 0; i < payline_count; ++i) {
