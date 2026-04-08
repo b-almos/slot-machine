@@ -21,7 +21,8 @@ namespace slot {
 	{
 		credit_system.subtractBet();
 
-		reel_set.spin(generateStopPositions());
+		std::array<int, reels_count> stop_positions = generateStopPositions();
+		reel_set.spin(stop_positions);
 
 		std::array<std::array<Symbol, reels_count>, rows_count > grid = reel_set.getGrid();
 		std::array<PaylineResult, payline_count> paylines_results = paylines.evaluatePaylines(grid);
@@ -31,7 +32,7 @@ namespace slot {
 
 		credit_system.addWinnings(total_multiplier);
 
-		return SpinResult{ grid, paylines_results, paytable_results, credit_system.getCurrentBet() * total_multiplier };
+		return SpinResult{ stop_positions, paylines_results, paytable_results, credit_system.getCurrentBet() * total_multiplier };
 
 	}
 
@@ -75,5 +76,19 @@ namespace slot {
 				std::cout << "\nerror: not enough balance\n";
 			}
 		}
+	}
+
+	void SlotMachine::monte_carlo_simulation()
+	{
+		credit_system.setBalance(1000000000);
+		credit_system.setBet(1);
+		long long total_winnings = 0;
+
+		while (credit_system.getBalance() != 0) {
+			SpinResult spin_result = spin();
+			total_winnings += spin_result.total_win;
+		}
+
+		std::cout << total_winnings << '\n';
 	}
 }

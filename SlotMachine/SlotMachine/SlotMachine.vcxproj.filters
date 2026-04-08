@@ -18,48 +18,48 @@
     <ClCompile Include="src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Reel.cpp">
+    <ClCompile Include="src\core\Reel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\ReelSet.cpp">
+    <ClCompile Include="src\core\ReelSet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Paylines.cpp">
+    <ClCompile Include="src\core\Paylines.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Paytable.cpp">
+    <ClCompile Include="src\core\Paytable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\CreditSystem.cpp">
+    <ClCompile Include="src\core\CreditSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\SlotMachine.cpp">
+    <ClCompile Include="src\core\SlotMachine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Types.h">
+    <ClInclude Include="src\core\Types.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Reel.h">
+    <ClInclude Include="src\core\Reel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\ReelSet.h">
+    <ClInclude Include="src\core\ReelSet.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Constants.h">
+    <ClInclude Include="src\core\Constants.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Paylines.h">
+    <ClInclude Include="src\core\Paylines.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Paytable.h">
+    <ClInclude Include="src\core\Paytable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\CreditSystem.h">
+    <ClInclude Include="src\core\CreditSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\SlotMachine.h">
+    <ClInclude Include="src\core\SlotMachine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

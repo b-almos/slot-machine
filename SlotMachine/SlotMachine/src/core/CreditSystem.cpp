@@ -4,12 +4,28 @@ namespace slot {
 	CreditSystem::CreditSystem()
 		: balance{ default_balance }, bet_level_position{ starting_bet_level_position } {}
 
+	void CreditSystem::setBalance(const int new_balance)
+	{
+		balance = new_balance;
+	}
+
+	void CreditSystem::setBet(const int new_bet)
+	{
+		for (int i = 0; i < bet_levels.size(); ++i) {
+			if (new_bet == bet_levels[i]) {
+				bet_level_position = i;
+				return;
+			}
+		}
+	}
+
 	bool CreditSystem::validateRaise() const
 	{
 		if (bet_level_position == bet_levels_count - 1)		// had to subtract 1 because of the bet_levels array indicing starting from 0
 			return false;
 		return true;
 	}
+
 
 	bool CreditSystem::validateLower() const
 	{

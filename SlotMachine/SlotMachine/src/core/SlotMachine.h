@@ -26,5 +26,7 @@ namespace slot {
 		SpinResult spin();
 
 		void run_game();
+
+		void monte_carlo_simulation();
 	};
 }

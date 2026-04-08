@@ -1,8 +1,8 @@
-#include "SlotMachine.h"
+#include "core/SlotMachine.h"
 
 int main()
 {
 	slot::SlotMachine slot_machine;
 
-	slot_machine.run_game();
+	slot_machine.monte_carlo_simulation();
 }

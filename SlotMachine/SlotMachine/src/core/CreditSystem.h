@@ -16,6 +16,9 @@ namespace slot {
 	public:
 		CreditSystem();
 
+		void setBalance(const int);
+		void setBet(const int);
+
 		bool validateRaise() const;
 		bool validateLower() const;
 		void raiseBetLevel();

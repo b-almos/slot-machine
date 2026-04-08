@@ -21,7 +21,7 @@ namespace slot {
 	};
 
 	struct SpinResult {
-		std::array<std::array<Symbol, reels_count>, rows_count> grid;
+		std::array<int, reels_count> stop_positions;
 		std::array<PaylineResult, payline_count> paylines_results;
 		std::array<int, payline_count> paytable_result;
 		int total_win;

@@ -19,23 +19,23 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\CreditSystem.cpp" />
+    <ClCompile Include="src\core\CreditSystem.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\Paylines.cpp" />
-    <ClCompile Include="src\Paytable.cpp" />
-    <ClCompile Include="src\Reel.cpp" />
-    <ClCompile Include="src\ReelSet.cpp" />
-    <ClCompile Include="src\SlotMachine.cpp" />
+    <ClCompile Include="src\core\Paylines.cpp" />
+    <ClCompile Include="src\core\Paytable.cpp" />
+    <ClCompile Include="src\core\Reel.cpp" />
+    <ClCompile Include="src\core\ReelSet.cpp" />
+    <ClCompile Include="src\core\SlotMachine.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Constants.h" />
-    <ClInclude Include="src\CreditSystem.h" />
-    <ClInclude Include="src\Paylines.h" />
-    <ClInclude Include="src\Paytable.h" />
-    <ClInclude Include="src\Reel.h" />
-    <ClInclude Include="src\ReelSet.h" />
-    <ClInclude Include="src\SlotMachine.h" />
-    <ClInclude Include="src\Types.h" />
+    <ClInclude Include="src\core\Constants.h" />
+    <ClInclude Include="src\core\CreditSystem.h" />
+    <ClInclude Include="src\core\Paylines.h" />
+    <ClInclude Include="src\core\Paytable.h" />
+    <ClInclude Include="src\core\Reel.h" />
+    <ClInclude Include="src\core\ReelSet.h" />
+    <ClInclude Include="src\core\SlotMachine.h" />
+    <ClInclude Include="src\core\Types.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
