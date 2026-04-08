@@ -1,8 +1,21 @@
-#include "core/SlotMachine.h"
+#include <SFML/Graphics.hpp>
 
 int main()
 {
-	slot::SlotMachine slot_machine;
+    sf::RenderWindow window(sf::VideoMode({ 200, 200 }), "SFML works!");
+    sf::CircleShape shape(100.f);
+    shape.setFillColor(sf::Color::Green);
 
-	slot_machine.monte_carlo_simulation();
+    while (window.isOpen())
+    {
+        while (const std::optional event = window.pollEvent())
+        {
+            if (event->is<sf::Event::Closed>())
+                window.close();
+        }
+
+        window.clear();
+        window.draw(shape);
+        window.display();
+    }
 }
