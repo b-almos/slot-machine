@@ -25,6 +25,8 @@ namespace slot::gfx {
 			return "bell";
 		case Symbol::Seven:
 			return "seven";
+		default:
+			return "unknown";
 		}
 	}
 }

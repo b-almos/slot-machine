@@ -5,6 +5,7 @@
 #include "core/SlotMachine.h"
 #include <SFML/Graphics.hpp>
 #include <graphics/GraphicsTypes.h>
+#include <graphics/GraphicsConstants.h>
 #include <core/Constants.h>
 #include <string>
 
@@ -16,6 +17,8 @@ namespace slot::gfx {
 		std::optional<SpinResult> spin_result;
 
 		sf::Text press_space_to_play;
+		sf::Sprite background;
+		std::array<sf::RectangleShape, 5> reel_panels;
 	public:
 		void handleEvent(const sf::Event& event) override;
 		void update(float dt) override;

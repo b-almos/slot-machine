@@ -41,6 +41,7 @@
     <ClInclude Include="src\core\SlotMachine.h" />
     <ClInclude Include="src\core\Types.h" />
     <ClInclude Include="src\graphics\game\Game.h" />
+    <ClInclude Include="src\graphics\GraphicsConstants.h" />
     <ClInclude Include="src\graphics\GraphicsTypes.h" />
     <ClInclude Include="src\graphics\resources\AssetManager.h" />
     <ClInclude Include="src\graphics\states\PlayingState.h" />

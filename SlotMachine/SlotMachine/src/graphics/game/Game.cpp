@@ -2,8 +2,10 @@
 
 namespace slot::gfx {
 	Game::Game()
-		: game_window(sf::VideoMode({ 1280u, 720u }), "Slot Game"), game_logic{}, state_manager{}
+		: game_window(sf::VideoMode::getDesktopMode(), "Slot Game", sf::Style::Default, sf::State::Fullscreen), game_logic{}, state_manager{}
 	{
+		sf::View view(sf::FloatRect({ 0.f, 0.f }, { virtual_width, virtual_height }));
+		game_window.setView(view);
 		asset_manager.loadTexture("cherry", "assets/textures/cherry.png");
 		asset_manager.loadTexture("lemon", "assets/textures/lemon.png");
 		asset_manager.loadTexture("orange", "assets/textures/orange.png");
@@ -12,6 +14,7 @@ namespace slot::gfx {
 		asset_manager.loadTexture("grape", "assets/textures/grape.png");
 		asset_manager.loadTexture("bell", "assets/textures/bell.png");
 		asset_manager.loadTexture("seven", "assets/textures/seven.png");
+		asset_manager.loadTexture("game_background", "assets/textures/game_background.jpg");
 		asset_manager.loadFont("main_font", "assets/fonts/Casino3DLinesMarquee.ttf");
 		state_manager.pushState(std::make_unique<PlayingState>(asset_manager, game_logic));
 		state_manager.applyPendingChange();
@@ -22,6 +25,12 @@ namespace slot::gfx {
 		while (const std::optional event = game_window.pollEvent()) {
 			if (event->is<sf::Event::Closed>())
 				game_window.close();
+
+			if (const auto* key = event->getIf<sf::Event::KeyPressed>())
+			{
+				if (key->code == sf::Keyboard::Key::Escape)
+					game_window.close();
+			}
 
 			state_manager.handleEvent(*event);
 		}
