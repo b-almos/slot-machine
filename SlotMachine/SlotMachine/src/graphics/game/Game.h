@@ -4,12 +4,14 @@
 #include <SFML/Graphics.hpp>
 #include "graphics/states/StateManager.h"
 #include "graphics/states/PlayingState.h"
+#include "graphics/resources/AssetManager.h"
 
 namespace slot::gfx {
 	class Game {
 	private:
 		sf::RenderWindow game_window;
 		slot::SlotMachine game_logic;
+		AssetManager asset_manager;
 		StateManager state_manager;
 
 		void processEvents();
