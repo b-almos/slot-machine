@@ -30,4 +30,9 @@ namespace slot {
 	{
 		return grid;
 	}
+
+	const Symbol ReelSet::getSymbolAt(const int reel, const int stop_position, const int offset) const
+	{
+		return reels[reel].getSymbolAt(stop_position, offset);
+	}
 }

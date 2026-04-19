@@ -4,7 +4,16 @@ namespace slot::gfx {
 	Game::Game()
 		: game_window(sf::VideoMode({ 1280u, 720u }), "Slot Game"), game_logic{}, state_manager{}
 	{
-		state_manager.pushState(std::make_unique<PlayingState>());
+		asset_manager.loadTexture("cherry", "assets/textures/cherry.png");
+		asset_manager.loadTexture("lemon", "assets/textures/lemon.png");
+		asset_manager.loadTexture("orange", "assets/textures/orange.png");
+		asset_manager.loadTexture("plum", "assets/textures/plum.png");
+		asset_manager.loadTexture("watermelon", "assets/textures/watermelon.png");
+		asset_manager.loadTexture("grape", "assets/textures/grape.png");
+		asset_manager.loadTexture("bell", "assets/textures/bell.png");
+		asset_manager.loadTexture("seven", "assets/textures/seven.png");
+		asset_manager.loadFont("main_font", "assets/fonts/Casino3DLinesMarquee.ttf");
+		state_manager.pushState(std::make_unique<PlayingState>(asset_manager, game_logic));
 		state_manager.applyPendingChange();
 	}
 

@@ -91,4 +91,9 @@ namespace slot {
 
 		std::cout << total_winnings << '\n';
 	}
+
+	const Symbol SlotMachine::getSymbolAt(const int reel, const int stop_position, const int offset) const
+	{
+		return reel_set.getSymbolAt(reel, stop_position, offset);
+	}
 }

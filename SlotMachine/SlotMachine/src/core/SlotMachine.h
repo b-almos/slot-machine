@@ -28,5 +28,8 @@ namespace slot {
 		void run_game();
 
 		void monte_carlo_simulation();
+
+		const Symbol getSymbolAt(const int reel, const int stop_position, const int offset) const;
+
 	};
 }

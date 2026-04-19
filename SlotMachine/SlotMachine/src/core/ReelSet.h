@@ -72,5 +72,6 @@ namespace slot {
 		void spin(const std::array<int, reels_count>&);
 		void print() const;
 		const std::array<std::array<Symbol, reels_count>, rows_count>& getGrid() const;
+		const Symbol getSymbolAt(const int reel, const int stop_position, const int offset) const;
 	};
 }
