@@ -21,6 +21,8 @@
   <ItemGroup>
     <ClCompile Include="src\core\CreditSystem.cpp" />
     <ClCompile Include="src\graphics\game\Game.cpp" />
+    <ClCompile Include="src\graphics\states\PlayingState.cpp" />
+    <ClCompile Include="src\graphics\states\StateManager.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\core\Paylines.cpp" />
     <ClCompile Include="src\core\Paytable.cpp" />
@@ -38,6 +40,10 @@
     <ClInclude Include="src\core\SlotMachine.h" />
     <ClInclude Include="src\core\Types.h" />
     <ClInclude Include="src\graphics\game\Game.h" />
+    <ClInclude Include="src\graphics\GraphicsTypes.h" />
+    <ClInclude Include="src\graphics\states\PlayingState.h" />
+    <ClInclude Include="src\graphics\states\State.h" />
+    <ClInclude Include="src\graphics\states\StateManager.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
