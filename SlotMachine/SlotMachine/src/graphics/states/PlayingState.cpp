@@ -5,7 +5,8 @@ namespace slot::gfx {
 		: asset_manager{ assets }, 
 		game_logic{ logic }, 
 		press_space_to_play{ assets.getFont("main_font"), "PRESS SPACE TO PLAY", 110, },
-		background{ assets.getTexture("game_background") }
+		background{ assets.getTexture("game_background") },
+		hud{ assets }
 	{
 		float scale_x = virtual_width / static_cast<float>(background.getTexture().getSize().x);
 		float scale_y = virtual_height / static_cast<float>(background.getTexture().getSize().y);
@@ -18,8 +19,8 @@ namespace slot::gfx {
 				grid_origin_x + i * (symbol_size + reel_gap),
 				grid_origin_y
 				});
-			reel_panels[i].setFillColor(sf::Color(40, 20, 60));			// darker purple than the background
-			reel_panels[i].setOutlineColor(sf::Color(218, 165, 32));	// nice gold
+			reel_panels[i].setFillColor(sf::Color(30, 5, 10));
+			reel_panels[i].setOutlineColor(sf::Color(218, 165, 32));
 			reel_panels[i].setOutlineThickness(2.f);
 		}
 	}
@@ -30,12 +31,28 @@ namespace slot::gfx {
 	{
 		if (const auto* key = event.getIf<sf::Event::KeyPressed>()) {
 			if (key->code == sf::Keyboard::Key::Space) {
-				spin_result = game_logic.spin();
+				if (game_logic.validateBet())
+					spin_result = game_logic.spin();
+			}
+
+			if (key->code == sf::Keyboard::Key::Up) {
+				if (game_logic.validateRaise())
+					game_logic.raiseBetLevel();
+			}
+
+			if (key->code == sf::Keyboard::Key::Down) {
+				if (game_logic.validateLower())
+					game_logic.lowerBetLevel();
 			}
 		}
 	}
 
-	void PlayingState::update(float dt) {}
+	void PlayingState::update(float dt) 
+	{
+		int last_win = spin_result.has_value() ? spin_result->total_win : 0;
+		hud.update(game_logic.getBalance(), game_logic.getCurrentBet(), last_win);
+		
+	}
 	void PlayingState::render(sf::RenderWindow& window)
 	{
 		window.draw(background);
@@ -61,6 +78,7 @@ namespace slot::gfx {
 					
 				});
 				window.draw(sprite);
+				hud.draw(window);
 			}
 		}
 	}

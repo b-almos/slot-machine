@@ -2,9 +2,8 @@
 
 namespace slot {
 	SlotMachine::SlotMachine()
-		: reel_set{}, paylines{}, paytable{}, credit_system{}, engine{ std::random_device{}()}, dist(0, strip_size-1)
-	{
-	}
+		: reel_set{}, paylines{}, paytable{}, credit_system{}, engine{ std::random_device{}() }, dist(0, strip_size - 1)
+	{}
 
 	std::array<int, reels_count> SlotMachine::generateStopPositions()
 	{
@@ -95,5 +94,36 @@ namespace slot {
 	const Symbol SlotMachine::getSymbolAt(const int reel, const int stop_position, const int offset) const
 	{
 		return reel_set.getSymbolAt(reel, stop_position, offset);
+	}
+
+	int SlotMachine::getBalance() const
+	{
+		return credit_system.getBalance();
+	}
+	int SlotMachine::getCurrentBet() const
+	{
+		return credit_system.getCurrentBet();
+	}
+
+	bool SlotMachine::validateRaise() const
+	{
+		return credit_system.validateRaise();
+	}
+	bool SlotMachine::validateLower() const
+	{
+		return credit_system.validateLower();
+	}
+	void SlotMachine::raiseBetLevel()
+	{
+		credit_system.raiseBetLevel();
+	}
+	void SlotMachine::lowerBetLevel()
+	{
+		credit_system.lowerBetLevel();
+	}
+
+	bool SlotMachine::validateBet() const
+	{
+		return credit_system.validateBet();
 	}
 }

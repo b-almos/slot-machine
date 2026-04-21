@@ -10,9 +10,9 @@ namespace slot::gfx {
     constexpr float symbol_size = 240.f;
     constexpr float reel_gap = 10.f;
 
-    constexpr float grid_width = 5.f * symbol_size + 4.f * reel_gap;    // 1240
-    constexpr float grid_height = 3.f * symbol_size;                     // 720
-    constexpr float grid_origin_x = (virtual_width - grid_width) / 2.f;  // 340
+    constexpr float grid_width = 5.f * symbol_size + 4.f * reel_gap;
+    constexpr float grid_height = 3.f * symbol_size;
+    constexpr float grid_origin_x = (virtual_width - grid_width) / 2.f;
     constexpr float grid_origin_y = 130.f;
 
     constexpr float frame_padding = 10.f;
@@ -25,5 +25,13 @@ namespace slot::gfx {
     constexpr float hud_height = virtual_height - hud_y;
 
     constexpr float message_y = 820.f;
+
+    constexpr float hud_label_y = 870.f;
+    constexpr float hud_value_y = 920.f;
+    constexpr unsigned int hud_label_size = 30;
+    constexpr unsigned int hud_value_size = 46;
+    constexpr float hud_balance_x = 200.f;
+    constexpr float hud_bet_x = 960.f;
+    constexpr float hud_win_x = 1720.f;
 
 }

@@ -14,8 +14,8 @@ namespace slot::gfx {
 		asset_manager.loadTexture("grape", "assets/textures/grape.png");
 		asset_manager.loadTexture("bell", "assets/textures/bell.png");
 		asset_manager.loadTexture("seven", "assets/textures/seven.png");
-		asset_manager.loadTexture("game_background", "assets/textures/game_background.jpg");
-		asset_manager.loadFont("main_font", "assets/fonts/Casino3DLinesMarquee.ttf");
+		asset_manager.loadTexture("game_background", "assets/textures/game_background.png");
+		asset_manager.loadFont("main_font", "assets/fonts/Roboto-Regular.ttf");
 		state_manager.pushState(std::make_unique<PlayingState>(asset_manager, game_logic));
 		state_manager.applyPendingChange();
 	}

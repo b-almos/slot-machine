@@ -31,5 +31,16 @@ namespace slot {
 
 		const Symbol getSymbolAt(const int reel, const int stop_position, const int offset) const;
 
+		// forward to creditsystem
+		int getBalance() const;
+		int getCurrentBet() const;
+
+		bool validateRaise() const;
+		bool validateLower() const;
+		void raiseBetLevel();
+		void lowerBetLevel();
+
+		bool validateBet() const;
+
 	};
 }

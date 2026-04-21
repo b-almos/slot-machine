@@ -24,6 +24,7 @@
     <ClCompile Include="src\graphics\resources\AssetManager.cpp" />
     <ClCompile Include="src\graphics\states\PlayingState.cpp" />
     <ClCompile Include="src\graphics\states\StateManager.cpp" />
+    <ClCompile Include="src\graphics\views\HUD.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\core\Paylines.cpp" />
     <ClCompile Include="src\core\Paytable.cpp" />
@@ -47,6 +48,7 @@
     <ClInclude Include="src\graphics\states\PlayingState.h" />
     <ClInclude Include="src\graphics\states\State.h" />
     <ClInclude Include="src\graphics\states\StateManager.h" />
+    <ClInclude Include="src\graphics\views\HUD.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>

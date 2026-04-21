@@ -8,12 +8,14 @@
 #include <graphics/GraphicsConstants.h>
 #include <core/Constants.h>
 #include <string>
+#include "graphics/views/HUD.h"
 
 namespace slot::gfx {
 	class PlayingState : public State {
 	private:
 		const AssetManager& asset_manager;
 		SlotMachine& game_logic;
+		HUD hud;
 		std::optional<SpinResult> spin_result;
 
 		sf::Text press_space_to_play;
