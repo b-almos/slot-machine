@@ -34,4 +34,9 @@ namespace slot::gfx {
     constexpr float hud_bet_x = 960.f;
     constexpr float hud_win_x = 1720.f;
 
+    constexpr float spin_speed = 20.f;
+    constexpr float stop_duration = 0.6f;
+    constexpr float spin_base_time = 0.8f;
+    constexpr float reel_stagger = 0.3f;
+
 }

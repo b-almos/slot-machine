@@ -6,6 +6,8 @@
 namespace slot::gfx {
 	enum class PendingAction { None, Push, Pop, Replace };
 
+	enum class ReelState { Idle, Spinning, Stopping };
+
 	inline std::string symbolToTextureKey(Symbol symbol)
 	{
 		switch (symbol) {

@@ -18,6 +18,7 @@ namespace slot::gfx {
 		asset_manager.loadFont("main_font", "assets/fonts/Roboto-Regular.ttf");
 		state_manager.pushState(std::make_unique<PlayingState>(asset_manager, game_logic));
 		state_manager.applyPendingChange();
+		game_window.setVerticalSyncEnabled(true);
 	}
 
 	void Game::processEvents()
