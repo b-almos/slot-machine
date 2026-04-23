@@ -10,6 +10,7 @@
 #include <string>
 #include "graphics/views/HUD.h"
 #include "graphics/views/ReelView.h"
+#include "graphics/views/ReelSetView.h"
 
 namespace slot::gfx {
 	class PlayingState : public State {
@@ -21,11 +22,8 @@ namespace slot::gfx {
 
 		sf::Text press_space_to_play;
 		sf::Sprite background;
-		std::array<sf::RectangleShape, 5> reel_panels;
 
-		std::array<std::unique_ptr<ReelView>, 5> reel_views;
-		float spin_timer{ 0.f };
-		bool is_spinning{ false };
+		ReelSetView reel_set_view;
 	public:
 		void handleEvent(const sf::Event& event) override;
 		void update(float dt) override;

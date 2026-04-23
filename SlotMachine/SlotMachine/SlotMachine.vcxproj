@@ -25,6 +25,7 @@
     <ClCompile Include="src\graphics\states\PlayingState.cpp" />
     <ClCompile Include="src\graphics\states\StateManager.cpp" />
     <ClCompile Include="src\graphics\views\HUD.cpp" />
+    <ClCompile Include="src\graphics\views\ReelSetView.cpp" />
     <ClCompile Include="src\graphics\views\ReelView.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\core\Paylines.cpp" />
@@ -51,6 +52,7 @@
     <ClInclude Include="src\graphics\states\State.h" />
     <ClInclude Include="src\graphics\states\StateManager.h" />
     <ClInclude Include="src\graphics\views\HUD.h" />
+    <ClInclude Include="src\graphics\views\ReelSetView.h" />
     <ClInclude Include="src\graphics\views\ReelView.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

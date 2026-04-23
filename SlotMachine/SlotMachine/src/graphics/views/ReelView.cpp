@@ -3,7 +3,7 @@
 namespace slot::gfx {
 	ReelView::ReelView(int index, const AssetManager& assets, SlotMachine& logic)
 		:state{ReelState::Idle},
-		scroll_position{ 0.f },
+		scroll_position{ index * 1.f },
 		target_stop{ 0 },
 		stop_start_position{ 0.f },
 		stop_timer{ 0.f },
