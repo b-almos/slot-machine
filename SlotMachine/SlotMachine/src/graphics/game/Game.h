@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include "graphics/states/StateManager.h"
 #include "graphics/states/PlayingState.h"
+#include "graphics/states/MenuState.h"
 #include "graphics/resources/AssetManager.h"
 #include "graphics/GraphicsConstants.h"
 

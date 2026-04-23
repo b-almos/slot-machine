@@ -16,7 +16,7 @@ namespace slot::gfx {
 		asset_manager.loadTexture("seven", "assets/textures/seven.png");
 		asset_manager.loadTexture("game_background", "assets/textures/game_background.png");
 		asset_manager.loadFont("main_font", "assets/fonts/Roboto-Regular.ttf");
-		state_manager.pushState(std::make_unique<PlayingState>(asset_manager, game_logic));
+		state_manager.pushState(std::make_unique<MenuState>(state_manager, asset_manager, game_logic));
 		state_manager.applyPendingChange();
 		game_window.setVerticalSyncEnabled(true);
 	}

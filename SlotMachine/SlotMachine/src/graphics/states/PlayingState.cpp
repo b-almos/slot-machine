@@ -1,10 +1,10 @@
 #include "PlayingState.h"
 
 namespace slot::gfx {
-	PlayingState::PlayingState(const AssetManager& assets, SlotMachine& logic)
-		: asset_manager{ assets },
+	PlayingState::PlayingState(StateManager& sm, const AssetManager& assets, SlotMachine& logic)
+		: State{ sm },
+		asset_manager{ assets },
 		game_logic{ logic },
-		press_space_to_play{ assets.getFont("main_font"), "PRESS SPACE TO PLAY", 110, },
 		background{ assets.getTexture("game_background") },
 		hud{ assets },
 		reel_set_view{ assets, logic }
@@ -53,13 +53,6 @@ namespace slot::gfx {
 	{
 		window.draw(background);
 		reel_set_view.render(window);
-		if (!spin_result.has_value()) {
-			window.draw(press_space_to_play);
-		}
-		else {
-			
-		}
-
 		hud.draw(window);
 	}
 }

@@ -39,4 +39,7 @@ namespace slot::gfx {
     constexpr float spin_base_time = 0.8f;
     constexpr float reel_stagger = 0.3f;
 
+    constexpr float title_text_y = 300.f;
+    constexpr float prompt_text_y = 600.f;
+
 }
