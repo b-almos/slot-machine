@@ -1,4 +1,6 @@
 #include "PlayingState.h"
+#include "PaytableState.h"
+#include "StateManager.h"
 
 namespace slot::gfx {
 	PlayingState::PlayingState(StateManager& sm, const AssetManager& assets, SlotMachine& logic)
@@ -37,6 +39,14 @@ namespace slot::gfx {
 			if (key->code == sf::Keyboard::Key::Down) {
 				if (game_logic.validateLower())
 					game_logic.lowerBetLevel();
+			}
+
+			if (key->code == sf::Keyboard::Key::Tab) {
+				if (!reel_set_view.isSpinning()) {
+					state_manager.pushState(
+						std::make_unique<PaytableState>(state_manager, asset_manager, game_logic)
+					);
+				}
 			}
 		}
 	}

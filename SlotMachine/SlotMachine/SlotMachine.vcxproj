@@ -23,6 +23,7 @@
     <ClCompile Include="src\graphics\game\Game.cpp" />
     <ClCompile Include="src\graphics\resources\AssetManager.cpp" />
     <ClCompile Include="src\graphics\states\MenuState.cpp" />
+    <ClCompile Include="src\graphics\states\PaytableState.cpp" />
     <ClCompile Include="src\graphics\states\PlayingState.cpp" />
     <ClCompile Include="src\graphics\states\State.cpp" />
     <ClCompile Include="src\graphics\states\StateManager.cpp" />
@@ -51,6 +52,7 @@
     <ClInclude Include="src\graphics\GraphicsTypes.h" />
     <ClInclude Include="src\graphics\resources\AssetManager.h" />
     <ClInclude Include="src\graphics\states\MenuState.h" />
+    <ClInclude Include="src\graphics\states\PaytableState.h" />
     <ClInclude Include="src\graphics\states\PlayingState.h" />
     <ClInclude Include="src\graphics\states\State.h" />
     <ClInclude Include="src\graphics\states\StateManager.h" />

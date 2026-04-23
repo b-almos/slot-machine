@@ -66,8 +66,8 @@ namespace slot::gfx {
 
 	void StateManager::render(sf::RenderWindow& window)
 	{
-		if (!states.empty())
-			states.back()->render(window);
+		for (const auto& state : states)
+			state->render(window);
 	}
 
 }

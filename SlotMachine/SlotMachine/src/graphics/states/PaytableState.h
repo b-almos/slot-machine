@@ -1,25 +1,24 @@
 #pragma once
 
-#include "graphics/states/State.h"
+#include "State.h"
 #include "graphics/resources/AssetManager.h"
 #include "core/SlotMachine.h"
+#include "graphics/GraphicsConstants.h"
+#include "core/Constants.h"
+#include "graphics/GraphicsTypes.h"
 #include <SFML/Graphics.hpp>
-#include <graphics/GraphicsTypes.h>
-#include <graphics/GraphicsConstants.h>
-#include <core/Constants.h>
 
 namespace slot::gfx {
-	class MenuState : public State {
+	class PaytableState : public State {
 	private:
 		const AssetManager& asset_manager;
 		SlotMachine& game_logic;
-
-		sf::Sprite background;
+		sf::RectangleShape overlay;
 		sf::Text title_text;
 		sf::Text prompt_text;
-		
+
 	public:
-		MenuState(StateManager& sm, const AssetManager& assets, SlotMachine& logic);
+		PaytableState(StateManager& sm, const AssetManager& assets, SlotMachine& logic);
 
 		void handleEvent(const sf::Event& event) override;
 		void update(float dt) override;

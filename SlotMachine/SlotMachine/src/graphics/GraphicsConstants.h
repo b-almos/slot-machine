@@ -39,7 +39,30 @@ namespace slot::gfx {
     constexpr float spin_base_time = 0.8f;
     constexpr float reel_stagger = 0.3f;
 
-    constexpr float title_text_y = 300.f;
-    constexpr float prompt_text_y = 600.f;
+    constexpr float menu_title_text_y = 300.f;
+    constexpr float menu_prompt_text_y = 600.f;
+
+    constexpr float paytable_title_text_y = 30.f;
+    constexpr float paytable_prompt_text_y = 1000.f;
+    constexpr float paytable_header_y = 130.f;
+    constexpr float paytable_start_y = 180.f;
+    constexpr float paytable_row_height = 95.f;
+    constexpr float paytable_sprite_size = 80.f;
+    constexpr float paytable_text_offset_y = 25.f;
+
+    constexpr float paytable_sprite_col = 100.f;
+    constexpr float paytable_name_col = 150.f;
+    constexpr float paytable_value_col = 200.f;
+
+    constexpr float paytable_width = paytable_sprite_col + paytable_name_col + 4.f * paytable_value_col;
+    constexpr float paytable_origin_x = (virtual_width - paytable_width) / 2.f;
+
+    constexpr float paytable_sprite_x = paytable_origin_x;
+    constexpr float paytable_name_x = paytable_sprite_x + paytable_sprite_col;
+    constexpr float paytable_col_x2 = paytable_name_x + paytable_name_col;
+    constexpr float paytable_col_x3 = paytable_col_x2 + paytable_value_col;
+    constexpr float paytable_col_x4 = paytable_col_x3 + paytable_value_col;
+    constexpr float paytable_col_x5 = paytable_col_x4 + paytable_value_col;
+    constexpr float paytable_right_edge = paytable_col_x5 + paytable_value_col;
 
 }

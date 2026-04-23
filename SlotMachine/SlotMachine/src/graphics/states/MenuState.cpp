@@ -1,4 +1,6 @@
 #include "graphics/states/MenuState.h"
+#include "graphics/states/PlayingState.h"
+#include "graphics/states/StateManager.h"
 
 namespace slot::gfx {
 	MenuState::MenuState(StateManager& sm, const AssetManager& assets, SlotMachine& logic)
@@ -16,13 +18,13 @@ namespace slot::gfx {
 		title_text.setFillColor(sf::Color(255, 225, 100));
 		title_text.setPosition({
 			(virtual_width - title_text.getLocalBounds().size.x) / 2.f,
-			title_text_y
+			menu_title_text_y
 			});
 
 		prompt_text.setFillColor(sf::Color(180, 150, 50));
 		prompt_text.setPosition({
 			(virtual_width - prompt_text.getLocalBounds().size.x) / 2.f,
-			prompt_text_y
+			menu_prompt_text_y
 			});
 	}
 
