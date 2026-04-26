@@ -28,7 +28,7 @@ namespace slot::gfx {
 			});
 	}
 
-	void MenuState::handleEvent(const sf::Event& event)
+	void MenuState::handleEvent(const sf::Event& event, sf::RenderWindow& window)
 	{
 		if (const auto* key = event.getIf<sf::Event::KeyPressed>()) {
 			if (key->code == sf::Keyboard::Key::Space) {

@@ -9,9 +9,9 @@ namespace slot {
 		Lemon,
 		Orange,
 		Plum,
+		Bell,
 		Watermelon,
 		Grapes,
-		Bell,
 		Seven
 	};
 

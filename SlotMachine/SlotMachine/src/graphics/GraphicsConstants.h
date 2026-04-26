@@ -65,4 +65,14 @@ namespace slot::gfx {
     constexpr float paytable_col_x5 = paytable_col_x4 + paytable_value_col;
     constexpr float paytable_right_edge = paytable_col_x5 + paytable_value_col;
 
+    constexpr float spin_button_size = 400.f;
+    constexpr float spin_button_x = 1550.f;
+    constexpr float spin_button_y = grid_origin_y + (grid_height - spin_button_size) / 2.f;
+
+    constexpr float bet_button_size = 35.f;
+    constexpr float bet_button_spacing = 20.f;
+    constexpr float bet_down_button_x = hud_bet_x + bet_button_size + bet_button_spacing + 55.f;
+    constexpr float bet_up_button_x = bet_down_button_x;
+    constexpr float bet_up_button_y = hud_value_y;
+    constexpr float bet_down_button_y = hud_value_y + 2*bet_button_spacing;
 }

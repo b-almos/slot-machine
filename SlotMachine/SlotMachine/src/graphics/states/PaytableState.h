@@ -20,7 +20,7 @@ namespace slot::gfx {
 	public:
 		PaytableState(StateManager& sm, const AssetManager& assets, SlotMachine& logic);
 
-		void handleEvent(const sf::Event& event) override;
+		void handleEvent(const sf::Event& event, sf::RenderWindow& window) override;
 		void update(float dt) override;
 		void render(sf::RenderWindow& window) override;
 	};

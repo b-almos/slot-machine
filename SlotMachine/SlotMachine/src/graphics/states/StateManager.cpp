@@ -52,10 +52,10 @@ namespace slot::gfx {
 		pending_state = nullptr;
 	}
 
-	void StateManager::handleEvent(const sf::Event& event)
+	void StateManager::handleEvent(const sf::Event& event, sf::RenderWindow& window)
 	{
 		if (!states.empty())
-			states.back()->handleEvent(event);
+			states.back()->handleEvent(event, window);
 	}
 
 	void StateManager::update(float dt)

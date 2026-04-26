@@ -18,7 +18,7 @@ namespace slot::gfx {
 
 
 
-	void PlayingState::handleEvent(const sf::Event& event) 
+	void PlayingState::handleEvent(const sf::Event& event, sf::RenderWindow& window)
 	{
 		if (const auto* key = event.getIf<sf::Event::KeyPressed>()) {
 			if (key->code == sf::Keyboard::Key::Space) {
@@ -46,6 +46,31 @@ namespace slot::gfx {
 					state_manager.pushState(
 						std::make_unique<PaytableState>(state_manager, asset_manager, game_logic)
 					);
+				}
+			}
+		}
+
+		if (const auto* mouse = event.getIf<sf::Event::MouseButtonPressed>()) {
+			if (mouse->button == sf::Mouse::Button::Left) {
+				sf::Vector2f mouse_pos = window.mapPixelToCoords(mouse->position);
+
+				if (hud.isSpinClicked(mouse_pos)) {
+					if (reel_set_view.isSpinning())
+						reel_set_view.skipAnimation(spin_result.value());
+					else if (game_logic.validateBet()) {
+						spin_result = game_logic.spin();
+						reel_set_view.startSpin();
+					}
+				}
+
+				if (hud.isBetUpClicked(mouse_pos)) {
+					if (game_logic.validateRaise())
+						game_logic.raiseBetLevel();
+				}
+
+				if (hud.isBetDownClicked(mouse_pos)) {
+					if (game_logic.validateLower())
+						game_logic.lowerBetLevel();
 				}
 			}
 		}

@@ -14,10 +14,18 @@ namespace slot::gfx {
 		sf::Text win_label;
 		sf::Text win_value;
 
+		sf::Sprite spin_button;
+		sf::Sprite bet_up_button;
+		sf::Sprite bet_down_button;
+
 	public:
 		HUD(const AssetManager&);
 
 		void update(int balance, int current_bet, int last_win);
 		void draw(sf::RenderWindow& window);
+
+		bool isSpinClicked(sf::Vector2f mouse_pos) const;
+		bool isBetUpClicked(sf::Vector2f mouse_pos) const;
+		bool isBetDownClicked(sf::Vector2f mouse_pos) const;
 	};
 }

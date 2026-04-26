@@ -11,7 +11,7 @@ namespace slot::gfx {
     {
         overlay.setSize({ virtual_width, virtual_height });
         overlay.setPosition({ 0.f, 0.f });
-        overlay.setFillColor(sf::Color(0, 0, 0, 180));
+        overlay.setFillColor(sf::Color::Black);
 
         title_text.setFillColor(sf::Color(255, 225, 100));
         title_text.setPosition({
@@ -26,7 +26,7 @@ namespace slot::gfx {
             });
     }
 
-    void PaytableState::handleEvent(const sf::Event& event)
+    void PaytableState::handleEvent(const sf::Event& event, sf::RenderWindow& window)
     {
         if (const auto* key = event.getIf<sf::Event::KeyPressed>()) {
             if (key->code == sf::Keyboard::Key::Tab ||
@@ -73,9 +73,9 @@ namespace slot::gfx {
 
         std::array<SymbolRow, 8> rows = { {
             {Symbol::Seven,      0,  20,  200, 1000},
-            {Symbol::Bell,       0,  8,   20,  80},
             {Symbol::Grapes,     0,  10,  40,  100},
             {Symbol::Watermelon, 0,  10,  40,  100},
+            {Symbol::Bell,       0,  8,   20,  80},
             {Symbol::Plum,       0,  4,   10,  40},
             {Symbol::Orange,     0,  4,   10,  40},
             {Symbol::Lemon,      0,  4,   10,  40},
@@ -91,11 +91,6 @@ namespace slot::gfx {
             sprite.setScale({ scale, scale });
             sprite.setPosition({ paytable_sprite_x, y });
             window.draw(sprite);
-
-            sf::Text name_text(asset_manager.getFont("main_font"), key, 32);
-            name_text.setFillColor(sf::Color(255, 255, 255));
-            name_text.setPosition({ paytable_name_x, y + paytable_text_offset_y });
-            window.draw(name_text);
 
             int current_bet = game_logic.getCurrentBet();
             auto drawValue = [&](int multiplier, float x) {

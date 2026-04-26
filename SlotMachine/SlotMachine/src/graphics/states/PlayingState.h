@@ -24,7 +24,7 @@ namespace slot::gfx {
 
 		ReelSetView reel_set_view;
 	public:
-		void handleEvent(const sf::Event& event) override;
+		void handleEvent(const sf::Event& event, sf::RenderWindow& window) override;
 		void update(float dt) override;
 		void render(sf::RenderWindow& window) override;
 
