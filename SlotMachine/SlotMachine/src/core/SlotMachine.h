@@ -42,5 +42,7 @@ namespace slot {
 
 		bool validateBet() const;
 
+
+		void addWinnings(const int total_win);
 	};
 }

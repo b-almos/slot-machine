@@ -20,5 +20,10 @@ namespace slot {
 
 	public:
 		std::array<PaylineResult, payline_count> evaluatePaylines(const std::array<std::array<Symbol, reels_count>, rows_count>&) const;
+
+		static const std::array<std::array<int, reels_count>, payline_count>& getPaylines()
+		{
+			return paylines;
+		}
 	};
 }

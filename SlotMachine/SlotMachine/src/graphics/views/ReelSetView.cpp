@@ -74,4 +74,58 @@ namespace slot::gfx {
 	{
 		return spinning;
 	}
+
+	void ReelSetView::drawWinLines(sf::RenderWindow& window, const SpinResult& result)
+	{
+		const auto& payline_defs = Paylines::getPaylines();
+
+		for (int line = 0; line < payline_count; ++line)
+		{
+			if (result.paytable_result[line] == 0)
+				continue;
+
+			sf::Color color = payline_colors[line];
+			int match_count = result.paylines_results[line].match_count;
+
+			std::array<sf::Vector2f, reels_count> centers;
+			for (int reel = 0; reel < reels_count; ++reel)
+			{
+				int row = payline_defs[line][reel];
+				centers[reel] = {
+					grid_origin_x + reel * (symbol_size + reel_gap) + symbol_size / 2.f,
+					grid_origin_y + row * symbol_size + symbol_size / 2.f
+				};
+			}
+
+			for (int reel = 0; reel < reels_count - 1; ++reel)
+			{
+				sf::Vector2f diff = centers[reel + 1] - centers[reel];
+				float length = std::sqrt(diff.x * diff.x + diff.y * diff.y);
+				float angle = std::atan2(diff.y, diff.x) * 180.f / 3.14159f;
+
+				sf::RectangleShape segment;
+				segment.setSize({ length, win_line_thickness });
+				segment.setPosition(centers[reel]);
+				segment.setFillColor(color);
+				segment.setOrigin({ 0.f, win_line_thickness / 2.f });
+				segment.setRotation(sf::degrees(angle));
+				window.draw(segment);
+			}
+
+			for (int reel = 0; reel < match_count; ++reel)
+			{
+				int row = payline_defs[line][reel];
+				sf::RectangleShape rect;
+				rect.setSize({ symbol_size, symbol_size });
+				rect.setPosition({
+					grid_origin_x + reel * (symbol_size + reel_gap),
+					grid_origin_y + row * symbol_size
+					});
+				rect.setFillColor(sf::Color(color.r, color.g, color.b, 40));
+				rect.setOutlineColor(color);
+				rect.setOutlineThickness(win_rect_thickness);
+				window.draw(rect);
+			}
+		}
+	}
 }

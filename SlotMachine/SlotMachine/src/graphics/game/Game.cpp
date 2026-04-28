@@ -16,6 +16,7 @@ namespace slot::gfx {
 		asset_manager.loadTexture("seven", "assets/textures/seven.png");
 		asset_manager.loadTexture("game_background", "assets/textures/game_background.png");
 		asset_manager.loadTexture("spin_button", "assets/textures/spin_button.png");
+		asset_manager.loadTexture("stop_button", "assets/textures/stop_button.png");
 		asset_manager.loadTexture("bet_up_button", "assets/textures/arrow_upward.png");
 		asset_manager.loadTexture("bet_down_button", "assets/textures/arrow_downward.png");
 		asset_manager.loadFont("main_font", "assets/fonts/Roboto-Regular.ttf");

@@ -27,5 +27,7 @@ namespace slot::gfx {
 		bool isSpinClicked(sf::Vector2f mouse_pos) const;
 		bool isBetUpClicked(sf::Vector2f mouse_pos) const;
 		bool isBetDownClicked(sf::Vector2f mouse_pos) const;
+
+		void setSpinButtonTexture(const sf::Texture& texture, float scale_multiplier);
 	};
 }

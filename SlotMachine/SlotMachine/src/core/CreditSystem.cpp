@@ -56,9 +56,9 @@ namespace slot {
 		balance -= bet_levels[bet_level_position];
 	}
 
-	void CreditSystem::addWinnings(const int total_multiplier)
+	void CreditSystem::addWinnings(const int total_win)
 	{
-		balance += bet_levels[bet_level_position] * total_multiplier;
+		balance += total_win;
 	}
 
 	int CreditSystem::getBalance() const

@@ -23,6 +23,13 @@ namespace slot::gfx {
 		sf::Sprite background;
 
 		ReelSetView reel_set_view;
+
+		int displayed_balance;
+		int last_win;
+		bool counting_up;
+		bool was_spinning;
+		float count_rate;
+		float count_accumulator;
 	public:
 		void handleEvent(const sf::Event& event, sf::RenderWindow& window) override;
 		void update(float dt) override;

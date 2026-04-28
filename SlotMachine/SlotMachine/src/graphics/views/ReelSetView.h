@@ -1,6 +1,8 @@
 #pragma once
 
 #include "graphics/views/ReelView.h"
+#include "core/Paylines.h"
+#include <cmath>
 
 namespace slot::gfx {
 	class ReelSetView {
@@ -17,5 +19,7 @@ namespace slot::gfx {
 		void update(float dt, const SpinResult& result);
 		void render(sf::RenderWindow& window);
 		bool isSpinning() const;
+
+		void drawWinLines(sf::RenderWindow& window, const SpinResult& result);
 	};
 }

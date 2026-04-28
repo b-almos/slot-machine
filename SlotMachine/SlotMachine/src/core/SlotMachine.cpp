@@ -28,12 +28,17 @@ namespace slot {
 		std::array<int, payline_count> paytable_results = paytable.evaluatePaytable(paylines_results);
 		int total_multiplier = paytable.totalMultiplier(paytable_results);
 
-
-		credit_system.addWinnings(total_multiplier);
-
 		return SpinResult{ stop_positions, paylines_results, paytable_results, credit_system.getCurrentBet() * total_multiplier };
 
 	}
+
+	void SlotMachine::addWinnings(const int total_win)
+	{
+		credit_system.addWinnings(total_win);
+	}
+
+	/// console part
+	/// ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	void SlotMachine::run_game()
 	{

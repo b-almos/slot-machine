@@ -75,4 +75,19 @@ namespace slot::gfx {
     constexpr float bet_up_button_x = bet_down_button_x;
     constexpr float bet_up_button_y = hud_value_y;
     constexpr float bet_down_button_y = hud_value_y + 2*bet_button_spacing;
+
+    constexpr float balance_count_duration = 1.5f;
+
+    constexpr float stop_button_scale_fix = 0.85f;
+
+    constexpr float win_line_thickness = 4.f;
+    constexpr float win_rect_thickness = 3.f;
+
+    inline const std::array<sf::Color, 5> payline_colors = {
+        sf::Color(255, 50, 50),
+        sf::Color(50, 255, 50),
+        sf::Color(50, 100, 255),
+        sf::Color(255, 255, 50),
+        sf::Color(255, 50, 255)
+    };
 }

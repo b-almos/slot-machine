@@ -78,4 +78,19 @@ namespace slot::gfx {
     {
         return bet_down_button.getGlobalBounds().contains(mouse_pos);
     }
+
+    void HUD::setSpinButtonTexture(const sf::Texture& texture, float scale_multiplier)
+    {
+        spin_button.setTexture(texture);
+        float scale = (spin_button_size / static_cast<float>(texture.getSize().x)) * scale_multiplier;
+        spin_button.setScale({ scale, scale });
+
+        sf::Vector2u size = texture.getSize();
+        spin_button.setOrigin({ static_cast<float>(size.x) / 2.f, static_cast<float>(size.y) / 2.f });
+
+        spin_button.setPosition({
+            spin_button_x + spin_button_size / 2.f,
+            spin_button_y + spin_button_size / 2.f
+            });
+    }
 }
