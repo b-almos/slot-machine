@@ -1,4 +1,6 @@
 #include "ReelSetView.h"
+#include "core/Paylines.h"
+#include <cmath>
 
 namespace slot::gfx {
 	ReelSetView::ReelSetView(const AssetManager& assets, SlotMachine& logic)
@@ -8,7 +10,7 @@ namespace slot::gfx {
 			reel_views[i] = std::make_unique<ReelView>(i, assets, logic);
 		}
 
-		for (int i = 0; i < 5; ++i)
+		for (int i = 0; i < reels_count; ++i)
 		{
 			reel_panels[i].setSize({ symbol_size, grid_height });
 			reel_panels[i].setPosition({

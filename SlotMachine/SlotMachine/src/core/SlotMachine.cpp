@@ -71,6 +71,7 @@ namespace slot {
 
 			if (credit_system.validateBet()) {
 				SpinResult spin_result = spin();
+				addWinnings(spin_result.total_win);
 
 				reel_set.print();
 				std::cout << "win: " << spin_result.total_win << '\n';
@@ -90,6 +91,7 @@ namespace slot {
 
 		while (credit_system.getBalance() != 0) {
 			SpinResult spin_result = spin();
+			addWinnings(spin_result.total_win);
 			total_winnings += spin_result.total_win;
 		}
 

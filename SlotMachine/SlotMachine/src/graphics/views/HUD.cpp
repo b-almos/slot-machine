@@ -12,8 +12,6 @@ namespace slot::gfx {
         bet_up_button{ assets.getTexture("bet_up_button") },
         bet_down_button{ assets.getTexture("bet_down_button") }
 	{
-        //sf::Color label_color(180, 150, 50);
-        //sf::Color value_color(255, 225, 100);
 
         sf::Color label_color(sf::Color::White);
         sf::Color value_color(sf::Color::White);

@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cmath>
+
 namespace slot::gfx {
     inline float easeOutBack(float t)
     {

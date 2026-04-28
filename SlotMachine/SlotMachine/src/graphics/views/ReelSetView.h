@@ -1,8 +1,6 @@
 #pragma once
 
 #include "graphics/views/ReelView.h"
-#include "core/Paylines.h"
-#include <cmath>
 
 namespace slot::gfx {
 	class ReelSetView {

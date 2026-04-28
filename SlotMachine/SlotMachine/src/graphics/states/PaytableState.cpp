@@ -11,7 +11,7 @@ namespace slot::gfx {
     {
         overlay.setSize({ virtual_width, virtual_height });
         overlay.setPosition({ 0.f, 0.f });
-        overlay.setFillColor(sf::Color::Black);
+        overlay.setFillColor(sf::Color(0, 0, 0, 240));
 
         title_text.setFillColor(sf::Color(255, 225, 100));
         title_text.setPosition({
@@ -82,6 +82,7 @@ namespace slot::gfx {
             {Symbol::Cherry,     1,  4,   10,  40}
         } };
 
+        int current_bet = game_logic.getCurrentBet();
         for (int i = 0; i < symbol_count; ++i) {
             float y = paytable_start_y + i * paytable_row_height;
 
@@ -92,7 +93,6 @@ namespace slot::gfx {
             sprite.setPosition({ paytable_sprite_x, y });
             window.draw(sprite);
 
-            int current_bet = game_logic.getCurrentBet();
             auto drawValue = [&](int multiplier, float x) {
                 int payout = multiplier * current_bet;
                 std::string str = multiplier > 0 ? std::to_string(payout) : "-";
